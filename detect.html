@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Device Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #info {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Get Device Information</h2>
+  <button onclick="getDeviceInfo()">Click Me</button>
+
+  <div id="info"></div>
+
+  <script>
+    function getDeviceInfo() {
+    const ua = detect.parse(navigator.userAgent);
+    document.getElementById('info').textContent = JSON.stringify(ua, null, 2);
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Detect.js/2.2.2/detect.min.js"></script>
+
+</body>
+</html>
